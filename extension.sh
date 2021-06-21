@@ -1,9 +1,17 @@
 #!/gearlock/bin/bash
 
+# Dialog Colors
+#
+# 1 Red
+# 2 Green
+# 3 Yellow
+# 4 Blue
+# 5 Purple
+# 6 Dark Green
 
 function InitSystem() {
 
-	# Defininf Important Variables
+	# Defining Important Variables
 	config_file="config.jax"
 	hosts_file="out/hosts"
 	hosts_bakup="out/hosts.bak"
@@ -45,7 +53,7 @@ if [[ $? -eq 0 ]];then
 		mv "$hosts_file" "$hosts_bakup"
 	fi
 
-	wget "$link" 2>&1 | stdbuf -o0 awk '/[.] +[0-9][0-9]?[0-9]?%/ { print substr($0,63,3) }' | dialog --title "Download in progress" --gauge "Downloading $packname hosts.. Please wait..." 10 80
+	wget "$link" 2>&1 | stdbuf -o0 awk '/[.] +[0-9][0-9]?[0-9]?%/ { print substr($0,63,3) }' | dialog --title "Download in progress" --gauge "Downloading $packname hosts ($size) .. Please wait..." 10 80
 	(pv -n hosts > "$hosts_file") 2>&1 | dialog --gauge "Merging host" 8 80
 	rm hosts
 	dialog --title "Success" --colors --msgbox "Successfully installed \Zb\Z4$packname\Zn pack" 6 60
@@ -79,12 +87,7 @@ function InstallPack() {
 		"mid")
 			device="\Zb\Z3Mid End Friendly\Zn";;
 	esac
-#1 Red
-#2 Green
-#3 Yellow
-#4 Blue
-#5 Purple
-#6 Dark Green
+
 
 	dialog --clear --yes-label "Install" --no-label "Back" --colors --title "Install $1" \
 --backtitle "Pack information" \
@@ -142,7 +145,7 @@ function SelectPack() {
     let i=$i+1
     OPTIONS+=($i "$line")
     done < <( cat $manifest_file | jq '.packs[]' -r )
-    ReadPackagename=$(dialog --clear --cancel-label "Back" \
+    readpackname=$(dialog --clear --cancel-label "Back" \
                     --backtitle "$BACKTITLE" \
                     --title "$TITLE" \
                     --menu "$MENU" \
@@ -151,8 +154,8 @@ function SelectPack() {
                     2>&1 >/dev/tty)
 
 if [ $? -eq 0 ]; then # Exit with OK
-    ReadPackage=$(cat $manifest_file | jq '.packs[]' -r | sed "${ReadPackagename}!d")
-    InstallPack "$ReadPackage"
+    readpack=$(cat $manifest_file | jq '.packs[]' -r | sed "${readpackname}!d")
+    InstallPack "$readpack"
 else
 	MainMenu
 fi
