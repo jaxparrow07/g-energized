@@ -1,0 +1,114 @@
+{
+
+"dev": [
+	
+	{
+
+		"maintainedby":"Jaxparrow",
+		"contributors":"NONE",
+		"lastupdated":"21 June 2021",
+		"version":"1.0",
+		"versioncode":1
+
+
+	}
+
+],
+
+"packs": [
+
+"Spark",
+"Blu",
+"BluGO",
+"Basic",
+"Porn",
+"Ultimate",
+"Unified"
+
+],
+
+
+"packinfo":[
+
+	{
+		"Spark":[{
+
+			"domains": "50K+",
+			"type": "True Lite Blocking",
+			"size": "1.5MB",
+			"sources": 20,
+			"device": "low",
+			"link": "https://block.energized.pro/spark/formats/hosts"
+
+		}],
+		"Blu":[{
+
+			"domains": "180K+",
+			"type": "Finest Midrange Protection",
+			"size": "6MB",
+			"sources": 45,
+			"device": "mid",
+			"link": "https://block.energized.pro/blu/formats/hosts"
+
+		}],
+		"BluGO":[{
+
+			"domains": "120K+",
+			"type": "Energized GO Edition",
+			"size": "3MB",
+			"sources": 25,
+			"device": "low",
+			"link": "https://block.energized.pro/bluGo/formats/hosts"
+
+		}],
+		"Basic":[{
+
+			"domains": "450K+",
+			"type": "Finest Midrange Protection",
+			"size": "13MB",
+			"sources": 50,
+			"device": "high",
+			"link": "https://block.energized.pro/basic/formats/hosts"
+
+		}],
+		"Porn":[{
+
+			"domains": "530K+",
+			"type": "Energized Porn Blocking",
+			"size": "15MB",
+			"sources": 10,
+			"device": "high",
+			"link": "https://block.energized.pro/porn/formats/hosts"
+
+		}],
+		"Ultimate":[{
+
+			"domains": "700K+",
+			"type": "Energized Flagship Annoyances Protection",
+			"size": "20MB",
+			"sources": 100,
+			"device": "high",
+			"link": "https://block.energized.pro/ultimate/formats/hosts"
+
+		}],
+		"Unified":[{
+
+			"domains": "1.2M+",
+			"type": "Energized Flagship Annoyances & Porn Protection ",
+			"size": "30MB",
+			"sources": 111,
+			"device": "high",
+			"link": "https://block.energized.pro/unified/formats/hosts"
+
+		}]
+
+
+
+
+	}
+
+]
+
+
+}
+
