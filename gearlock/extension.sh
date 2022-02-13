@@ -88,7 +88,7 @@ function InstallPack() {
 
  	dialog --infobox "Loading Manifest file" 5 50
 
-	packinformation=$(cat "${manifest_file}" | jq ".packinfo[].${1}[]")
+	packinformation=$(cat "${manifest_file}" | jq ".packs[].${1}[]")
 	domains=$(echo $packinformation | jq '.domains' -r)
 	type=$(echo $packinformation | jq '.type' -r)
 	sources=$(echo $packinformation | jq '.sources' -r)
@@ -163,7 +163,7 @@ function SelectPack() {
     while read -r line; do
     let i=$i+1
     OPTIONS+=($i "$line")
-    done < <( cat $manifest_file | jq '.packs[]' -r )
+    done < <( cat $manifest_file | jq '.packs[] | keys[]' -r )
     readpackname=$(dialog --clear --cancel-label "Back" \
                     --backtitle "$BACKTITLE" \
                     --title "$TITLE" \
@@ -173,7 +173,7 @@ function SelectPack() {
                     2>&1 >/dev/tty)
 
 if [ $? -eq 0 ]; then # Exit with OK
-    readpack=$(cat $manifest_file | jq '.packs[]' -r | sed "${readpackname}!d")
+    readpack=$(cat $manifest_file | jq '.packs[] | keys[]' -r | sed "${readpackname}!d")
     InstallPack "$readpack"
 else
 	MainMenu
@@ -228,7 +228,7 @@ function CurrentPack() {
 
 dialog --infobox "Loading Manifest file" 5 50
 
-packinformation=$(cat "${manifest_file}" | jq ".packinfo[].${current_pack}[]")
+packinformation=$(cat "${manifest_file}" | jq ".packs[].${current_pack}[]")
 domains=$(echo $packinformation | jq '.domains' -r)
 type=$(echo $packinformation | jq '.type' -r)
 sources=$(echo $packinformation | jq '.sources' -r)

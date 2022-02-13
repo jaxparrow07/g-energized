@@ -6,29 +6,17 @@
 
 		"maintainedby":"Jaxparrow",
 		"contributors":"NONE",
-		"lastupdated":"21 June 2021",
-		"version":"1.0",
-		"versioncode":1
+		"lastupdated":"13 February 2022",
+		"version":"1.5.1",
+		"versioncode":3
 
 
 	}
 
 ],
 
-"packs": [
 
-"Spark",
-"Blu",
-"BluGO",
-"Basic",
-"Porn",
-"Ultimate",
-"Unified"
-
-],
-
-
-"packinfo":[
+"packs":[
 
 	{
 		"Spark":[{

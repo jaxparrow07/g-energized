@@ -10,7 +10,7 @@ TYPE="Extension" #Specify (Package / Extension)
 
 AUTHOR="jaxparrow" #Your name as the Developer/Owner/Packer
 
-VERSION="1.5" #Specify the Version of this package/extension
+VERSION="1.5.1" #Specify the Version of this package/extension
 
 SHORTDESC="Adware, Porn, Malware site blocker" #Provide a short description about this package/extension
 
