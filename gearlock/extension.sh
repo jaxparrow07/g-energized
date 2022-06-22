@@ -290,7 +290,7 @@ Press \Zb[Enter]\Zn to continue" 12 40
 	if [[ $dom_count -ne 0 ]];then
 
 		MergeLists "wlist"
-		dialog --title "Info" --colors --msgbox "$? domain/s from Whitelist removed from hosts file ( \Z2\ZbUnblocked\Zn )" 7 80
+		dialog --title "Info" --colors --msgbox "$? domain(s) from Whitelist removed from hosts file ( \Z2\ZbUnblocked\Zn )" 7 80
 	else
 
 		dialog --title "Info" --colors --msgbox "Empty Whitlist" 7 40
@@ -390,8 +390,8 @@ Press \Zb[Enter]\Zn to continue" 12 40
 		4)
 	if [[ $dom_count -ne 0 ]];then
 
-		MergeLists "wlist"
-		dialog --title "Info" --colors --msgbox "$? domain/s from Blacklist added to hosts file ( \Z1\ZbBlocked\Zn )" 7 80
+		MergeLists "blist"
+		dialog --title "Info" --colors --msgbox "$? domain(s) from Blacklist added to hosts file ( \Z1\ZbBlocked\Zn )" 7 80
 	else
 
 		dialog --title "Info" --colors --msgbox "Empty Blacklist" 7 40
